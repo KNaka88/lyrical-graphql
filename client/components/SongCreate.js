@@ -14,6 +14,7 @@ class SongCreate extends Component {
   onSubmit(event) {
     event.preventDefault();
 
+    // you want to use refetchQueries because you want to update mutation that is not related to created object (whole lists)
     this.props.mutate({
       variables: { title: this.state.title },
       refetchQueries: [{ query }]
